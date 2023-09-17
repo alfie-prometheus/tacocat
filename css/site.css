@@ -64,6 +64,41 @@ h1,h2,h3,h4,h5,h6 {
     color:var(--primary-color);
 }
 
+.btn-submit {
+    width: 5rem;
+    background-color: var(--primary-color);
+    margin-bottom: 3rem;
+    margin-top: 1rem;
+}
+
+.white-text {
+    color: rgb(255, 255, 255);
+  }
+  
+.title-row{
+    border-bottom: solid black;
+    padding-bottom:2rem;
+}
+.title {
+    color: black;
+}
+
+.instructions {
+    color: black;
+}
+
+.content {
+    color: black;
+    font-weight: bold;
+    margin: top 1rem;
+    padding: left 0;
+}
+
+.input_class {
+    width: 20rem;
+    margin: left 5rem bottom 1rem;
+}
+
 .checklist >li i{
     color: var(--secondary-color);
 }
@@ -78,4 +113,16 @@ word-wrap: break-word;
 main>.container {
     padding: 60px 15px 0px
 }
+
+#result {
+    font-size: 16px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.red-text {
+    color: red;
+}
+
+
 
