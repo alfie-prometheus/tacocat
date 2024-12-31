@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en" class="h-100">
+<head>
+    <title>Taco Cat: A Coding Project by Alfie Jaiyoon Kim</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/5db21ba9c6.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/site.css">
+    <link rel="stylesheet" href="/css/prism.css">
+    <link rel="icon" type="img/png" href="/img/tacocat_favicon_io/favicon-32x32.png">
+</head>
+<body class="d-flex flex-column h-100">
+    <!-- ==== Nav Section ==== -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="/img/Alfie_Kim_logo_removed_bg_rectangle_ma14q6_c_scale,w_200.png" class="d-inline-block align-tect-top me-3" width="120" height="100%">Taco Cat</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/app.html">The App</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/code.html">The Code</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" target="_blank" href="#">Git Repo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" target="_blank" href="#">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- ==== Main Section ==== -->
+    <main class="flex-shrink-0">
+        <div class="container py-5 px-5 mt-5">
+
+            <h2 class="border-1 border-bottom border-dark">The Code for Taco Cat</h2>
+            <div class="row row-cols-1 row-cols-lg-2">
+                <div class="col-lg-8">
+                    <pre class="line-numbers"><code class="language-javascript">
+                        function cleanString(input) {
+                            return input.toLowerCase().replace(/[^a-z]/g, ''); // convert to lowercase and remove non-alphabetic characters
+                        }
+                        
+                        function getInput() {
+                            let inputWord = document.getElementById("inputWord").value;
+                            return cleanString(inputWord);
+                        }
+                        
+                        function tacoCat(inputWord) {
+                            if (!inputWord) {
+                                console.log("You must provide an input.");
+                                return;  // Make sure to exit the function if there's no input
+                            }
+                        
+                            const letters = inputWord.split("");
+                            const n = letters.length;
+                            let isPalindrome = true;
+                        
+                            for (let i = 0; i <= n / 2; i++) {
+                                if (letters[i] !== letters[n - i - 1]) {
+                                    isPalindrome = false;
+                                    break;
+                                }
+                            }
+                        
+                            if (isPalindrome) {
+                                displayResult("<strong>Success! </strong><span class='red-text'>" + inputWord + "</span> is a Palindrome!");
+                            } else {
+                                displayResult("<span class='red-text'>" + inputWord + "</span> is not a Palindrome.");
+                            }
+                        }
+                        
+                        function displayResult(message) {
+                            document.getElementById("result").innerHTML = message;
+                        }
+                        
+                        document.getElementById('inputSubmit').addEventListener('click', function () {
+                            const input = getInput();
+                            tacoCat(input);
+                        });                
+                    </code>
+                    </pre>
+                </div>
+                <div class="col-lg-4">
+                    <h5>Taco Cat</h5>
+                    <p>The code comprises several functions aiming to determine if a provided string,<br> 
+                        taken from a webpage input field labeled "inputWord", is a palindrome:<br>
+
+                        <b>cleanString(input)</b>: This function processes the given string. It converts the string<br> 
+                        to lowercase and then removes any characters that aren't in the alphabet.<br>
+                    
+                        <b>getInput()</b>: Fetches the user's input from the webpage's input field identified by "inputWord". 
+                        After retrieving, it cleans the input using the cleanString function.<br>
+                    
+                        <b>tacoCat(inputWord)</b>: Determines if the cleaned input string is a palindrome. A palindrome is a word, 
+                        phrase, number, or another sequence of characters that reads the same forward and backward 
+                        (ignoring spaces, punctuation, and capitalization). If the string is found to be a palindrome, 
+                        a success message is displayed. If not, a failure message is shown.<br>
+                    
+                        <b>displayResult(message)</b>: Handles the display of results on the webpage. The provided message is injected 
+                        into an HTML element with the ID "result".<br>
+                    
+                    Lastly, an event listener is attached to a button with the ID "inputSubmit". When this button is clicked,<br> 
+                    the palindrome check is triggered using the provided input string.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- ==== Footer Section ==== -->
+    <footer class="footer custom-footer mt-auto py-3">
+        <div class="container-fluid">
+            <div class="row row-cols-sm-2 row-cols-md-3">
+                <div class="col order-2 order-sm-2 col-sm-12 mt-1 order-md-1 text-light justify-content-sm-end align-items-center">
+                    <div><span class="text-muted">&copy;2023</span> Alfie Jaiyoon Kim | alfie.prometheus@gmail.com</div>
+                </div>
+                <div class="col cols-sm-5 d-flex order-sm-1 order-md-2 align-items-center justify-content-center">   
+                    <img src="/img/Alfie_Kim_logo_removed_bg_rectangle_ma14q6_c_scale,w_200.png" alt="Alfie Kim personal logo">
+                </div>
+                <div class="col cols-sm-7 d-flex align-items-center justify-content-end order-sm-2 order-md-3 pt-0 mt-0">
+                    <div class="row">
+                        <div class="col social"><a href="#" target="_blank"><i class="fab fa-linkedin fa-2x img-fluid" aria-hidden="true"></i></fa></a></div>
+                        <div class="col social"><a href="#" target="_blank"><i class="fab fa-github fa-2x img-fluid" aria-hidden="true"></i></fa></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
+    </script>
+    <!-- ====Prism JS==== -->
+    <script src="/js/prism.js"></script>
+    <script>
+        Prism.plugins.NormalizeWhitespace.setDefaults({
+        'remove-trailing': true,
+        'remove-indent': true,
+        'left-trim': true,
+        'right-trim': true
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+:root {
+    --primary-color: #1d5888;
+    --secondary-color: #ff993b;
+    --dark-color: #292929;
+    --white-color: #dff3e4;
+}
+
+body {
+    color:var(--dark-color);
+}
+
+nav {
+    background-color:var(--dark-color);
+}
+
+.custom-footer {
+    background-color: var(--dark-color);
+    height: 150px;
+}
+
+@media (max-width: 375px) {
+    .custom-footer div span, .custom-footer div {
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 376px) and (max-width: 414px) {
+    .custom-footer div span, .custom-footer div {
+        font-size: 10px;
+    }
+}
+
+.footer .img-fluid {
+    object-fit: cover;
+}
+
+.bsicon {
+    color: purple;
+}
+
+.jsicon{
+    color: #f7df1e;
+}
+
+.html5icon{
+    color: orangered;
+}
+
+.cssicon{
+    color: rgb(11,82,214);
+}
+
+footer .social>a{
+    color: var(--white-color);
+    opacity: 0.75;
+}
+
+footer .social>a:hover{
+    opacity: 0.9;
+    color:var(--secondary-color);
+}
+
+h1,h2,h3,h4,h5,h6 {
+    color:var(--primary-color);
+}
+
+.btn-submit {
+    width: 5rem;
+    background-color: var(--primary-color);
+    margin-bottom: 3rem;
+    margin-top: 1rem;
+}
+
+.white-text {
+    color: rgb(255, 255, 255);
+  }
+  
+.title-row{
+    border-bottom: solid black;
+    padding-bottom:2rem;
+}
+.title {
+    color: black;
+}
+
+.instructions {
+    color: black;
+}
+
+.content {
+    color: black;
+    font-weight: bold;
+    margin: top 1rem;
+    padding: left 0;
+}
+
+.input_class {
+    width: 20rem;
+    margin: left 5rem bottom 1rem;
+}
+
+.checklist >li i{
+    color: var(--secondary-color);
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+white-space: pre-wrap;
+word-break: break-all;
+word-wrap: break-word;
+}
+
+main>.container {
+    padding: 60px 15px 0px
+}
+
+#result {
+    font-size: 16px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.red-text {
+    color: red;
+}
+
+
+
